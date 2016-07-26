@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TruckTracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="image_of_led_desc">Image of LED</string>
+    <string name="tims_world">Tims World!</string>
+    <string name="led_image">LED image</string>
+    <string name="powerLEDLabel">USB Power</string>
+    <string name="usbSigMoveLabel">Movement</string>
+</resources>
