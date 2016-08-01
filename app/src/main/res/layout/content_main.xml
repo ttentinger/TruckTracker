@@ -1,69 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?><!--suppress AndroidUnknownAttribute -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.fynydd.trucktracker.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:weightSum="1"
+    tools:context="com.fynydd.trucktracker.MainActivity">
 
-    <TextView
-        android:id="@+id/usbConnectiontextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tims_world" />
 
 
     <TableLayout
-        android:layout_width="fill_parent"
+        android:id="@+id/tableLayoutLiveAxis"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="90dip"
-        android:stretchColumns="*">
+        android:stretchColumns="*"
+        android:layout_marginTop="90dp">
 
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="X-Axis"
-                android:textSize="14sp" />
+        <TableRow android:layout_width="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Y-Axis"
-                android:textSize="14sp" />
+                android:text="@string/x_axis"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Z-Axis"
-                android:textSize="14sp" />
+                android:text="@string/y_axis"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/z_axis"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_width="match_parent">
 
             <TextView
                 android:id="@+id/x_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="0.0" />
 
             <TextView
                 android:id="@+id/y_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="0.0" />
 
             <TextView
                 android:id="@+id/z_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="0.0" />
         </TableRow>
     </TableLayout>
 
@@ -78,52 +80,283 @@
         android:visibility="invisible" />
         -->
 
-    <TableLayout
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:id="@+id/tableLayoutBlanket"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="320dip"
-        android:layout_marginBottom="5dp"
-        android:stretchColumns="*">
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false">
 
-        <TableRow>
-            <TextView
-                android:id="@+id/usbPowerlabel"
-                android:layout_width="wrap_content"
+        <TableLayout
+            android:id="@+id/tableLayoutTimerTabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_marginTop="140dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="false"
+            android:divider="@color/colorPrimaryDark"
+            android:stretchColumns="*"
+            android:paddingBottom="24dp">
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/powerLEDLabel" />
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="2dp"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/usbSigMoveLabel"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/motionlabeltv"
+                    android:id="@+id/textViewCntMotLab"
+                    android:layout_column="0"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/ZeroCnt"
+                    android:id="@+id/textViewCntMot"
+                    android:layout_column="1"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0"
+                    android:id="@+id/textViewCntMotEpoch"
+                    android:layout_column="2"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingEnd="24dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/usbSigMoveLabel" />
-        </TableRow>
+                android:gravity="center">
 
-        <TableRow>
-            android:paddingTop="18dip"
-            <ImageView
-                android:id="@+id/USBimageView"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/dmslabeltv"
+                    android:id="@+id/textViewCntDMSLab"
+                    android:layout_column="0"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0"
+                    android:id="@+id/textViewCntDMS"
+                    android:layout_column="1"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0"
+                    android:id="@+id/textViewCounts23"
+                    android:layout_column="2"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:paddingEnd="24dp"
+                    android:layout_gravity="center_horizontal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/usbConnectiontextView"
-                android:background="@android:color/white"
-                android:contentDescription="@string/led_image"
-                android:gravity="center"
-                android:src="@drawable/redsmallled" />
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/elapsedlabeltv"
+                    android:id="@+id/textViewCntElaped"
+                    android:layout_column="0"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0"
+                    android:id="@+id/textViewCounts32"
+                    android:layout_column="1"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0"
+                    android:id="@+id/textViewCounts33"
+                    android:layout_column="2"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:paddingEnd="24dp"
+                    android:layout_gravity="center_horizontal" />
+
+            </TableRow>
+        </TableLayout>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_above="@+id/tableLayout"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tableLayoutTimerTabel"
+            android:padding="6dp"
+            android:background="@drawable/back"
+            android:drawSelectorOnTop="true"
+            tools:listitem="@android:layout/simple_list_item_2"
+            android:layout_alignParentEnd="true" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:gravity="bottom|end"
+            android:id="@+id/tableLayout">
 
 
-            <ImageView
-                android:id="@+id/MoveImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/usbConnectiontextView"
-                android:layout_marginBottom="15dp"
-                android:background="@android:color/white"
-                android:contentDescription="@string/usbSigMoveLabel"
-                android:gravity="center"
-                android:src="@drawable/redsmallled" />
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:paddingTop="14dp"
+                android:gravity="center_horizontal"
+                android:paddingBottom="2dp">
+
+                <TextView
+                    android:id="@+id/usbPowerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/powerLEDLabel"
+                    android:layout_marginRight="40dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/usbSigMoveLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:text="@string/usbSigMoveLabel"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/DMSLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginRight="0dp"
+                    android:text="@string/dms"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingBottom="14dp"
+                android:paddingTop="2dp">
+
+                <ImageView
+                    android:id="@+id/USBimageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/led_image"
+                    android:gravity="center"
+                    android:src="@drawable/redsmallled"
+                    android:layout_marginRight="40dp" />
+
+                <ImageView
+                    android:id="@+id/MoveImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/usbSigMoveLabel"
+                    android:gravity="center"
+                    android:src="@drawable/redsmallled" />
+
+                <ImageView
+                    android:id="@+id/DMSImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/DMSLabel"
+                    android:gravity="center"
+                    android:src="@drawable/redsmallled"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="center_horizontal" />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -2,8 +2,18 @@
     <string name="app_name">TruckTracker</string>
     <string name="action_settings">Settings</string>
     <string name="image_of_led_desc">Image of LED</string>
-    <string name="tims_world">Tims World!</string>
     <string name="led_image">LED image</string>
     <string name="powerLEDLabel">USB Power</string>
     <string name="usbSigMoveLabel">Movement</string>
+    <string name="z_axis">Z-Axis</string>
+    <string name="y_axis">Y-Axis</string>
+    <string name="x_axis">X-Axis</string>
+    <string name="dms">DMS</string>
+    <string name="DMSLabel">DMS</string>
+
+    <string name="timer01">DMS</string>
+    <string name="dmslabeltv">DMS:</string>
+    <string name="motionlabeltv">Motion:</string>
+    <string name="elapsedlabeltv">Elapsed:</string>
+    <string name="ZeroCnt">0</string>
 </resources>

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private boolean mInitialized;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    private final float NOISE = (float) 3.5;
+    private final float NOISE = (float) 1.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         setContentView(R.layout.activity_main);
         image = (ImageView) findViewById(R.id.USBimageView);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //    setSupportActionBar(toolbar);
 
         switch (batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1)) {
             case BatteryManager.BATTERY_PLUGGED_AC:
